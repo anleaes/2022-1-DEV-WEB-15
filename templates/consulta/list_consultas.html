@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Consultas - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Consultas</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'consulta:add_consulta' %}">Cadastrar nova consulta</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    {% if user.is_authenticated %}
+                    <th scope="col">Sobrenome</th>
+                    {% endif %}
+                    <th scope="col">Nome Animal</th>
+                    {% if user.is_authenticated %}
+                    <th scope="col">Endereco</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">E-mail</th>
+                    {% endif %}
+                    <th scope="col">Horário</th>
+                    <th scope="col">Raca</th>
+                    <!-- <th scope="col">Foto</th> -->
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consulta in consultas %}
+                        <tr>
+                            <th scope="row">{{ consulta.id }}</th>
+                            <td>{{ consulta.first_name }}</td>
+                            
+                    {% if user.is_authenticated %}
+                            <td>{{ consulta.last_name }}</td>
+                            
+                    {% endif %}
+                            <td>{{ consulta.animal_name }}</td>
+                            
+                    {% if user.is_authenticated %}
+                            <td>{{ consulta.address }}</td>
+                            <td>{{ consulta.cell_phone }}</td>
+                            <td>{{ consulta.email }}</td>
+                            
+                    {% endif %}
+                            <td>{{ consulta.hour }}</td>
+                            <td>
+                                {% for consulta_raca in consulta_racas %}
+                                    {% if consulta_raca.consulta_id == consulta.id %}
+                                        <li>{{ consulta_raca.raca }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                           
+                    {% if user.is_authenticated %} 
+                            <td>
+                                <a href="{% url 'consultas:delete_consulta' consulta.id %}" class="btn btn-success btn-sm ">Concluir</a>
+                            </td>
+                             <td>
+                                <a href="{% url 'consultas:edit_consulta' consulta.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'consultas:delete_consulta' consulta.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        
+                    {% endif %}
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

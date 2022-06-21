@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock title %}
+
+{% block body %}
+
+<style>
+    .body{background-color: #6F6FFF;}
+</style>
+
+
+<body class="body">
+    
+    <h1 style="color: #ffffff; text-shadow: 2px,2px,8px, #000000; text-align: center; left: 50%;"> Consulta cadastrada com sucesso!</h1>
+    <a type="button" class="btn btn-success" style="position: relative; border: 3px, solid; left: 45%; top: 250px;" href="{% url 'core:home' %}">Voltar a pagina inicial</a>
+
+</body>
+
+
+{% endblock body %}
