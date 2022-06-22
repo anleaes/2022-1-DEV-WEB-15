@@ -7,13 +7,24 @@
 {% block body %}
 
 <style>
-    .body{background-color: #6F6FFF;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
 </style>
 
 
 <body class="body">
     
-    <h1 style="color: #ffffff; text-shadow: 2px,2px,8px, #000000; text-align: center; left: 50%;"> Consulta cadastrada com sucesso!</h1>
+    <h1 style="color: #000000; text-shadow: 2px,2px,8px, #000000; text-align: center; left: 50%;"> Consulta cadastrada com sucesso!</h1>
+
+    <img src="https://cdn.discordapp.com/attachments/591478133446672394/989278235743363162/confirm.gif" alt="Confirm"  width="250" class="center"/>
+
+
     <a type="button" class="btn btn-success" style="position: relative; border: 3px, solid; left: 45%; top: 250px;" href="{% url 'core:home' %}">Voltar a pagina inicial</a>
 
 </body>

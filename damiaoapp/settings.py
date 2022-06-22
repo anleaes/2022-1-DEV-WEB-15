@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'consulta.apps.ConsultaConfig',
     'racas.apps.RacasConfig',
+    'internacao.apps.InternacaoConfig',
 ]
 
 MIDDLEWARE = [

@@ -30,6 +30,8 @@ urlpatterns = [
     path('contas/', include('accounts.urls', namespace='accounts')),
     path('consulta/', include('consulta.urls', namespace='consultas')),
     path('racas/', include('racas.urls', namespace='racas')),
+    path('internacao/', include('internacao.urls', namespace='internacao')),
+
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

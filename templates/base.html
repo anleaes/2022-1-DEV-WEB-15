@@ -28,6 +28,7 @@
 
                         {% if user.is_superuser %}
                         <a class="dropdown-item" href="{% url 'consulta:list_consultas' %}">Consultas</a>
+                        <a class="dropdown-item" href="{% url 'internacao:list_internacoes' %}">Internações</a>
                         <a class="dropdown-item" href="{% url 'orders:list_orders' %}">Pedidos</a>
                         <a class="dropdown-item" href="{% url 'products:list_products' %}">Produtos</a>
                         <a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categorias</a>
@@ -36,12 +37,8 @@
                     </div>
                 </li>
             </ul>
-            <!-- <form action="{% url 'clients:search_clients' %}" method="GET" class="form-inline my-2 my-md-0" style="margin-right: 10px">
-                <input class="form-control" name="query" type="text" placeholder="Sobrenome do cliente" aria-label="Buscar" style="margin-right: 10px">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
-            </form> -->
             {% endif %}
-        <!--{% if user.is_authenticated %}-->
+        {% if user.is_authenticated %}
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.get_full_name|default:user.username }}</a>
@@ -53,7 +50,7 @@
                     </li>
                 </ul>
         </div>
-        <!-- {% endif %} -->
+        {% endif %}
     </nav>
     <!-- FIM: Bloco do Bootstrap a ser incluido -->
 

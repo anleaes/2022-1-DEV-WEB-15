@@ -6,8 +6,12 @@
     Novo usuario - {{ block.super}}
 {% endblock title %}
 
-{% block body %}
+<style>
+    .context{background-color: #484848;}
+</style>
 
+{% block body %}
+<body class="context">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -39,5 +43,5 @@
             </div>
         </div>
     </div>
-
+</body>
 {% endblock body %}
