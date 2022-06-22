@@ -27,7 +27,6 @@
                     <th scope="col">Ativo</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Foto</th>
-                    <th scope="col">Documento</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -50,9 +49,6 @@
                             <td>{{ product.category }}</td>
                             <td>
                                 <img src="{{ product.photo.url }}" width="50" height="50">
-                            </td>
-                            <td>
-                                <a href="{{ product.doc.url }}" >{{ product.doc.url }}</a>
                             </td>
                             <td>
                                 <a href="{% url 'products:edit_product' product.id %}" class="btn btn-primary btn-sm">Editar</a>
